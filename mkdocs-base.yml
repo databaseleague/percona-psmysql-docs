@@ -240,6 +240,23 @@ nav:
       - diagnostics/innodb_fragmentation_count.md
       - diagnostics/stacktrace.md
       - diagnostics/libcoredumper.md
+  - Audit Log Filter:
+      - audit-log-filter/audit-log-filter-overview.md
+      - audit-log-filter/install-audit-log-filter.md
+      - Formats: 
+        - Overview: audit-log-filter/audit-log-filter-formats.md
+        - XML (New style): audit-log-filter/audit-log-filter-new.md
+        - XML (Old style): audit-log-filter/audit-log-filter-old.md
+        - JSON: audit-log-filter/audit-log-filter-json.md
+      - audit-log-filter/audit-log-filter-options.md
+      - audit-log-filter/audit-log-filter-security.md
+      - audit-log-filter/audit-log-filter-compression-encryption.md
+      - audit-log-filter/reading-audit-log-filter-files.md
+      - audit-log-filter/filter-audit-log-filter-files.md
+      - audit-log-filter/audit-log-filter-restrictions.md
+      - audit-log-filter/audit-log-filter-naming.md
+      - audit-log-filter/disable-audit-log-filter.md
+      - audit-log-filter/uninstall-audit-log-filter.md
   - Replication:
       - replication/group-replication-flow-control.md
       - replication/group-replication-system-variables.md

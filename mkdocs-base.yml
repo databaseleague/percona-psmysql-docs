@@ -223,7 +223,40 @@ nav:
       - LDAP features:
         - security/ldap-authentication.md
         - security/ldap-system-variables.md
-      - security/data-masking.md
+      - Data masking:
+        - data-masking-overview.md
+        - data-masking-comparison.md
+        - Data masking component:
+          - install-data-masking-component.md
+          - data-masking-component-functions.md
+          - Functions:
+            - data-masking-function-list.md
+            - gen-blocklist-component.md
+            - gen-dictionary-component.md
+            - gen-range-component.md
+            - gen-rnd-canada-sin-component.md
+            - gen-rnd-email-component.md
+            - gen-rnd-iban-component.md
+            - gen-rnd-pan-component.md
+            - gen-rnd-ssn-component.md
+            - gen-rnd-uk-nin-component.md
+            - gen-rnd-us-phone-component.md
+            - gen-rnd-uuid-component.md
+            - mask-canada-sin-component.md
+            - mask-iban-component.md
+            - mask-inner-component.md
+            - mask-outer-component.md
+            - mask-pan-component.md
+            - mask-pan-relaxed-component.md
+            - mask-ssn-component.md
+            - mask-uk-nin-component.md
+            - mask-uuid-component.md
+            - masking-dictionary-remove-component.md
+            - masking-dictionary-term-add-component.md
+            - masking-dictionary-term-remove-component.md
+        - Data masking plugin:
+          - install-data-masking-plugin.md
+          - data-masking-plugin-functions.md
       - security/pam_plugin.md
       - security/ssl-improvement.md
       - security/system-variables.md

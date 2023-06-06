@@ -1,44 +1,9 @@
-# Data masking
 
-This feature was implemented in *Percona Server for MySQL* version Percona Server for MySQL 8.0.17-8.
-
-The Percona Data Masking plugin is a free and Open Source implementation of the
-*MySQL*’s data masking plugin. Data Masking provides a set of functions to hide
-sensitive data with modified content.
-
-Data masking can have either of the characteristics:
+# Data masking component functions
 
 
-* Generation of random data, such as an email address
 
 
-* De-identify data by transforming the data to hide content
-
-### Installing the plugin
-
-The following command installs the plugin:
-
-```{.bash data-prompt="$"}
-$ INSTALL PLUGIN data_masking SONAME 'data_masking.so';
-```
-
-### Data masking functions
-
-The data masking functions have the following categories:
-
-
-* General purpose
-
-
-* Special purpose
-
-
-* Generating Random Data with Defined characteristics
-
-
-* Using Dictionaries to Generate Random Data
-
-### General purpose
 
 The general purpose data masking functions are the following:
 
@@ -58,7 +23,7 @@ The general purpose data masking functions are the following:
     </tr>
 </table>
 
-#### Examples
+### Examples
 
 An example of `mask_inner`:
 
@@ -92,7 +57,7 @@ mysql> SELECT mask_outer('123456789', 2, 2);
     +------------------------------------+
     ```
 
-### Special Purpose
+
 
 The special purpose data masking functions are as follows:
 
@@ -171,7 +136,7 @@ mysql> SELECT mask_ssn('555-55-5555');
     +-------------------------+
     ```
 
-### Generate random data for specific requirements
+
 
 These functions generate random values for specific requirements.
 
@@ -302,7 +267,7 @@ mysql> SELECT gen_rnd_ssn()
     +-----------------------------+
     ```
 
-### Use dictionaries to generate random terms
+
 
 Use a selected dictionary to generate random terms. The dictionary must be loaded from a file with the following characteristics:
 
@@ -321,6 +286,8 @@ Copy the dictionary files to a directory accessible to MySQL. The [secure-file-p
 
     *Percona Server for MySQL* 8.0.21-12 enabled using the `secure-file-priv` option for gen_dictionary_load().
 
+    [MySQL 8.0.23](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-23.html) deprecated the `gen_blacklist()` function. Use `gen_blocklist()` instead.
+
 <table style="width:100%">
     <tr>
         <td>Parameter</td>
@@ -329,7 +296,7 @@ Copy the dictionary files to a directory accessible to MySQL. The [secure-file-p
       
     </tr>
     <tr>
-        <td>gen_blacklist(str, dictionary_name, replacement_dictionary_name)</td>
+        <td>gen_blocklist(str, dictionary_name, replacement_dictionary_name)</td>
         <td>Replaces a term with a term from a second dictionary.</td>
         <td>A dictionary term</td>
            </tr>
@@ -353,17 +320,17 @@ Copy the dictionary files to a directory accessible to MySQL. The [secure-file-p
 
 #### Example
 
-An example of `gen_blacklist()`:
+An example of `gen_blocklist()`:
 
 ```{.bash data-prompt="mysql>"}
-mysql> SELECT gen_blacklist('apple', 'fruit', 'nut');
+mysql> SELECT gen_blocklist('apple', 'fruit', 'nut');
 ```
 
 ??? example "Expected output"
 
     ```{.text .no-copy}
     +-----------------------------------------+
-    | gen_blacklist('apple', 'fruit', 'nut')  |
+    | gen_blocklist('apple', 'fruit', 'nut')  |
     +-----------------------------------------+
     | walnut                                  |
     +-----------------------------------------+
@@ -415,6 +382,7 @@ mysql> SELECT gen_dictionary_load('/usr/local/mysql/dict-files/testdict', 'testd
     +-------------------------------------------------------------------------------+
     ```
 
-### Uninstalling the plugin
 
-The [UNINSTALL PLUGIN](https://dev.mysql.com/doc/refman/8.0/en/uninstall-plugin.html) statement disables and uninstalls the plugin.
+```
+
+
